@@ -8,7 +8,7 @@
         "description": "Alert header of category warning."
     },
     "alert_invalid_domainmatchpattern_warning": {
-        "message": "Маска домена должна начинаться с *.",
+        "message": "Маска домена должна начинаться с '*.'.",
         "description": "Alert header of category warning."
     },
     "alert_no_domainmatchpattern_warning": {
