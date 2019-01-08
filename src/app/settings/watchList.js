@@ -98,7 +98,9 @@ export default class WatchList extends React.Component {
     if (!this.state.modified) {
       return this.setState({editorSite: null});
     }
-    if (this.state.editorSite.frames.some(frame => !/^\*(\.\w+(-\w+)*)+(\.\w{2,})?$/.test(frame.frame))) {
+    if (this.state.editorSite.frames.some(frame => !/^\*(\.\w+(-\w+)*)+(\.\w{2,})?$/.test(frame.frame)) &&
+        this.state.editorSite.frames.some(frame => !/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/.test(frame.frame)) && // IP: xxx.xxx.xxx.xxx
+        this.state.editorSite.frames.some(frame => !/^file:\/\/.+$/.test(frame.frame))) { // file://xxx
       alert(l10n.map.alert_invalid_domainmatchpattern_warning);
       return;
     }
